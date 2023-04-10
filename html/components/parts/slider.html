@@ -1,0 +1,61 @@
+<div class="component-content" id="componentSlider">
+	<div class="component-item">
+		<h2 class="component-title">슬라이드(swiper.js)</h2>
+		<div class="component-body">
+			<ul class="component-sub-text">
+				<li>비동기 후 슬라이드 안될때(업데이트) 함수 - <strong style="color: #d8027d">window.sliderUpdate()</strong></li>
+				<li><span class="font-class">.swiper-container</span>클래스에 슬라이드별로 클래스를 추가해 사용해주세요.</li>
+				<li>슬라이드 스크립트 및 옵션은 common-ui.js를 참고해주세요.</li>
+			</ul>
+			<div class="component-result">
+				<div class="swiper-container slider-example">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="../../resources/images/_temp/img-temp-01.jpg" alt="" /></div>
+						<div class="swiper-slide"><img src="../../resources/images/_temp/img-temp-02.jpg" alt="" /></div>
+						<div class="swiper-slide"><img src="../../resources/images/_temp/img-temp-03.jpg" alt="" /></div>
+					</div>
+					<div class="swiper-pagination"></div>
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+				</div>
+			</div>
+			<div class="component-code">
+				<div class="component-code-header">
+					<div class="text">HTML</div>
+					<button type="button" class="btn-toggle">코드 접기</button>
+				</div>
+				<div class="compoenet-code-body">
+					<div class="colorscripter-code" style="color: #f0f0f0; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position: relative !important; overflow: auto">
+						<table class="colorscripter-code-table" style="margin: 0; padding: 0; border: none; background-color: #272727; border-radius: 4px" cellspacing="0" cellpadding="0">
+							<tr>
+								<td style="padding: 6px; border-right: 2px solid #4f4f4f">
+									<div style="margin: 0; padding: 0; word-break: normal; text-align: right; color: #aaa; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height: 150%">
+										<div style="line-height: 150%">1</div>
+										<div style="line-height: 150%">2</div>
+										<div style="line-height: 150%">3</div>
+										<div style="line-height: 150%">4</div>
+										<div style="line-height: 150%">5</div>
+										<div style="line-height: 150%">6</div>
+										<div style="line-height: 150%">7</div>
+										<div style="line-height: 150%">8</div>
+										<div style="line-height: 150%">9</div>
+										<div style="line-height: 150%">10</div>
+									</div>
+								</td>
+								<td style="padding: 6px 0; text-align: left">
+									<pre
+                    style="margin: 0; padding: 0; color: #f0f0f0; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height: 150%"
+                  ><div style="padding:0 6px; white-space:pre; line-height:150%"><span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"swiper-container&nbsp;slider-example"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"swiper-wrapper"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"swiper-slide"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span><span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">img</span>&nbsp;<span style="color:#a8ff58">src</span>=<span style="color:#ffd500">"../../resources/images/_temp/img-temp-01.jpg"</span><span style="color:#a8ff58"></span>&nbsp;<span style="color:#a8ff58">alt</span>=<span style="color:#ffd500">""</span><span style="color:#a8ff58"></span>&nbsp;<span style="color:#a8ff58">/</span><span style="color:#f0f0f0">&gt;</span><span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"swiper-slide"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span><span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">img</span>&nbsp;<span style="color:#a8ff58">src</span>=<span style="color:#ffd500">"../../resources/images/_temp/img-temp-02.jpg"</span><span style="color:#a8ff58"></span>&nbsp;<span style="color:#a8ff58">alt</span>=<span style="color:#ffd500">""</span><span style="color:#a8ff58"></span>&nbsp;<span style="color:#a8ff58">/</span><span style="color:#f0f0f0">&gt;</span><span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"swiper-slide"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span><span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">img</span>&nbsp;<span style="color:#a8ff58">src</span>=<span style="color:#ffd500">"../../resources/images/_temp/img-temp-03.jpg"</span><span style="color:#a8ff58"></span>&nbsp;<span style="color:#a8ff58">alt</span>=<span style="color:#ffd500">""</span><span style="color:#a8ff58"></span>&nbsp;<span style="color:#a8ff58">/</span><span style="color:#f0f0f0">&gt;</span><span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"swiper-pagination"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span><span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"swiper-button-prev"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span><span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"swiper-button-next"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span><span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%"><span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div></pre>
+									<div style="text-align: right; margin-top: -13px; margin-right: 5px; font-size: 9px; font-style: italic"><a href="http://colorscripter.com/info#e" target="_blank" style="color:#4f4f4ftext-decoration:none">Colored by Color Scripter</a></div>
+								</td>
+								<td style="vertical-align: bottom; padding: 0 2px 4px 0">
+									<a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration: none; color: white"><span style="font-size: 9px; word-break: normal; background-color: #4f4f4f; color: white; border-radius: 10px; padding: 1px">cs</span></a>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,232 @@
+$input-cover-height: 30px;
+
+// input
+.input-cover {
+  position: relative;
+  .form-input {
+    display: block;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: rem($input-cover-height);
+    line-height: rem($input-cover-height - 2px);
+    border: 0;
+    padding-top: rem(4px);
+    padding-bottom: rem(8px);
+    border-bottom: 1px solid #dedede;
+    border-radius: 0;
+    font-weight: 300;
+    font-size: rem(18px);
+    background-color: transparent;
+    @include placeholder(#979797);
+    &:read-only,
+    &:disabled {
+      color: #999 !important;
+      &.datepicker-input {
+        color: #000 !important;
+      }
+    }
+  }
+  .form-label {
+    display: block;
+    font-size: rem(16px);
+    color: #666;
+  }
+  .required {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: rem(2px);
+    margin-left: rem(5px);
+    font-weight: 700;
+    font-size: rem(16px);
+    color: $primary;
+  }
+  .file-wrapper {
+    position: relative;
+    .form-input {
+      padding-right: rem(70px);
+    }
+    .file-input {
+      @include blind;
+      top: 0;
+      right: 0;
+      z-index: 1;
+    }
+    .file-label {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+    }
+  }
+  &.disable-active {
+    .form-label {
+      margin-bottom: rem(10px);
+    }
+    &.float {
+      .form-label {
+        margin-bottom: 0;
+        transform: translate3d(0, -36px, 0);
+      }
+    }
+  }
+  &.float {
+    position: relative;
+    @include box-sizing();
+    &.active {
+      .form-label {
+        transform: translate3d(0, -24px, 0) scale(0.77);
+      }
+    }
+    .form-input {
+      padding-top: rem(8px);
+    }
+    .form-label {
+      position: absolute;
+      top: rem(7px);
+      left: 0;
+      right: 0;
+      z-index: 1;
+      width: 100%;
+      transform: translate3d(0, 0, 0) scale(1);
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      transform-origin: left top;
+      @include ellipsis;
+    }
+  }
+  &.focus {
+    border-color: $primary;
+    .form-label {
+      color: $primary;
+    }
+    .form-input {
+      border-color: $primary;
+      color: $primary;
+    }
+  }
+  &.btn-with {
+    &.small {
+      .form-input {
+        padding-right: rem(80px);
+      }
+    }
+    &.medium {
+      .form-input {
+        padding-right: rem(110px);
+      }
+    }
+    &.large {
+      .form-input {
+        padding-right: rem(130px);
+      }
+    }
+    .btn {
+      position: absolute;
+      bottom: 4px;
+      right: 0;
+      z-index: 2;
+      padding: 0 rem(16px);
+      text-align: center;
+      font-weight: 600;
+      font-size: 13px;
+    }
+  }
+}
+
+// radio,checkbox
+$radioSize: 20px;
+$checkboxSize: 24px;
+$textSpace: 6px;
+.selector-wrapper {
+  .selector-cover {
+    + .selector-cover {
+      margin-top: rem(10px);
+    }
+  }
+  &.horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    .selector-cover {
+      margin-right: rem(20px);
+      + .selector-cover {
+        margin-top: 0;
+      }
+    }
+  }
+}
+.selector-cover {
+  line-height: 1;
+  font-size: 0;
+  input {
+    cursor: pointer;
+    @include blind();
+    + label {
+      background-repeat: no-repeat;
+      background-position: 0 0;
+    }
+  }
+  label {
+    display: inline-flex;
+    align-items: center;
+    font-size: rem(14px);
+    cursor: pointer;
+  }
+  // 라디오
+  &.radio {
+    label {
+      min-height: rem($radioSize);
+      line-height: 1.5;
+      padding-left: rem($radioSize + $textSpace);
+      background-image: url('../images/components/icon-radio-off.png');
+      background-size: rem($radioSize) rem($radioSize);
+    }
+    input:checked + label {
+      background-image: url('../images/components/icon-radio-on.png');
+    }
+    &.solo {
+      label {
+        padding-left: rem($radioSize);
+      }
+    }
+  }
+  // 체크박스
+  &.checkbox {
+    label {
+      min-height: rem($checkboxSize);
+      line-height: 1.5;
+      padding-left: rem($checkboxSize + $textSpace);
+    }
+    &.round {
+      label {
+        background-image: url('../images/components/icon-checkbox-round-off.png');
+        background-size: rem($checkboxSize) rem($checkboxSize);
+      }
+      input:checked + label {
+        background-image: url('../images/components/icon-checkbox-round-on.png');
+      }
+    }
+    &.square {
+      label {
+        background-image: url('../images/components/icon-checkbox-square-off.png');
+        background-size: rem($checkboxSize) rem($checkboxSize);
+      }
+      input:checked + label {
+        background-image: url('../images/components/icon-checkbox-square-on.png');
+      }
+    }
+    &.solo {
+      label {
+        padding-left: rem($checkboxSize);
+      }
+    }
+  }
+}
+.form-guide-text {
+  display: block;
+  font-weight: 300;
+  margin-top: rem(12px);
+  font-size: rem(15px);
+  + .form-guide-text {
+    margin-top: rem(4px);
+  }
+}

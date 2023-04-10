@@ -1,0 +1,65 @@
+<div class="component-content" id="componentAccordion">
+  <div class="component-item">
+    <h2 class="component-title">아코디언</h2>
+    <div class="component-body">
+      <ul class="component-sub-text">
+        <li><span class="font-class">.accordion-container</span>클래스에 <span class="font-class">.solo</span> 클래스를 붙히면 리스트의 토글이 각각 적용됩니다.</li>
+        <li>아코디언을 펼친상태에서 렌더링 하려면 <span class="font-class">.accordion-list</span>클래스에 <span class="font-class">.active</span> 클래스를 추가하고 <span class="font-class">.accordion-body</span>태그에 <span class="font-class">style="display:block"</span>속성을 넣어줘야 합니다.</li>
+        <li><span class="font-class">data-speed</span> 속성을 이용해 토글 속도를 조절할수 있습니다.</li>
+      </ul>
+      <div class="component-result">
+        <!-- solo 클래스를 붙히면 토글이 각각 적용됩니다. -->
+        <div class="accordion-container" data-speed="200">
+          <div class="accordion-list active">
+            <div class="accordion-header">아코디언 메뉴1</div>
+            <div class="accordion-body" style="display: block">This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element.</div>
+          </div>
+          <div class="accordion-list">
+            <div class="accordion-header">아코디언 메뉴2</div>
+            <div class="accordion-body">This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element.</div>
+          </div>
+        </div>
+      </div>
+      <div class="component-code">
+        <div class="component-code-header">
+          <div class="text">HTML</div>
+          <button type="button" class="btn-toggle">코드 접기</button>
+        </div>
+        <div class="compoenet-code-body">
+          <div class="colorscripter-code" style="color: #f0f0f0; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position: relative !important; overflow: auto">
+            <table class="colorscripter-code-table" style="margin: 0; padding: 0; border: none; background-color: #272727; border-radius: 4px" cellspacing="0" cellpadding="0">
+              <tr>
+                <td style="padding: 6px; border-right: 2px solid #4f4f4f">
+                  <div style="margin: 0; padding: 0; word-break: normal; text-align: right; color: #aaa; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height: 150%">
+                    <div style="line-height: 150%">1</div>
+                    <div style="line-height: 150%">2</div>
+                    <div style="line-height: 150%">3</div>
+                    <div style="line-height: 150%">4</div>
+                    <div style="line-height: 150%">5</div>
+                    <div style="line-height: 150%">6</div>
+                    <div style="line-height: 150%">7</div>
+                    <div style="line-height: 150%">8</div>
+                    <div style="line-height: 150%">9</div>
+                    <div style="line-height: 150%">10</div>
+                    <div style="line-height: 150%">11</div>
+                    <div style="line-height: 150%">12</div>
+                    <div style="line-height: 150%">13</div>
+                  </div>
+                </td>
+                <td style="padding: 6px 0; text-align: left">
+                  <pre
+                    style="margin: 0; padding: 0; color: #f0f0f0; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height: 150%"
+                  ><div style="padding:0 6px; white-space:pre; line-height:150%"><span style="color:#999999">&lt;!--&nbsp;solo&nbsp;클래스를&nbsp;붙히면&nbsp;토글이&nbsp;각각&nbsp;적용됩니다.&nbsp;--&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%"><span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"accordion-container"</span><span style="color:#a8ff58"></span>&nbsp;<span style="color:#a8ff58">data-speed</span>=<span style="color:#ffd500">"200"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"accordion-list&nbsp;active"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"accordion-header"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span>아코디언&nbsp;메뉴1<span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"accordion-body"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span>This&nbsp;is&nbsp;the&nbsp;first&nbsp;item's&nbsp;accordion&nbsp;body.&nbsp;It&nbsp;is&nbsp;shown&nbsp;by&nbsp;default,</div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;&nbsp;&nbsp;until&nbsp;the&nbsp;collapse&nbsp;plugin&nbsp;adds&nbsp;the&nbsp;appropriate&nbsp;classes&nbsp;that&nbsp;we&nbsp;use&nbsp;to&nbsp;style&nbsp;each&nbsp;element.<span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"accordion-list"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"accordion-header"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span>아코디언&nbsp;메뉴2<span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"accordion-body"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span>This&nbsp;is&nbsp;the&nbsp;first&nbsp;item's&nbsp;accordion&nbsp;body.&nbsp;It&nbsp;is&nbsp;shown&nbsp;by&nbsp;default,</div><div style="padding:0 6px; white-space:pre; line-height:150%">until&nbsp;the&nbsp;collapse&nbsp;plugin&nbsp;adds&nbsp;the&nbsp;appropriate&nbsp;classes&nbsp;that&nbsp;we&nbsp;use&nbsp;to&nbsp;style&nbsp;each&nbsp;element.<span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%">&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:150%"><span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div></pre>
+                  <div style="text-align: right; margin-top: -13px; margin-right: 5px; font-size: 9px; font-style: italic"><a href="http://colorscripter.com/info#e" target="_blank" style="color:#4f4f4ftext-decoration:none">Colored by Color Scripter</a></div>
+                </td>
+                <td style="vertical-align: bottom; padding: 0 2px 4px 0">
+                  <a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration: none; color: white"><span style="font-size: 9px; word-break: normal; background-color: #4f4f4f; color: white; border-radius: 10px; padding: 1px">cs</span></a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

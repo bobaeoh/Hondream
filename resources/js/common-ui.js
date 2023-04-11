@@ -35,9 +35,9 @@
     //모바일메뉴 기능
     mobileMenuFunc();
     //fixed Btn Func
-    // FixedBtnFunc();
     FixedTest();
     fellowFunc();
+    offsetFunc();
     // 슬라이드
     sliderMaker();
   });
@@ -115,21 +115,6 @@
   };
 
   //fixed-btn
-  const FixedBtnFunc = () => {
-    const fixedBtn = $('.fixed-menu-wrap');
-    const windowHeight = $(window).height();
-    const elementTop = fixedBtn.offset().top;
-    const elementHeight = fixedBtn.outerHeight();
-    $(window).scroll(function () {
-      const scrollTop = $(window).scrollTop();
-      if (scrollTop + windowHeight - elementHeight > elementTop) {
-        fixedBtn.addClass('s-scrolled');
-      } else {
-        fixedBtn.removeClass('s-scrolled');
-      }
-    });
-  };
-
   const FixedTest = () => {
     const fixedElem = $('.fixed-menu-wrap');
     if (!fixedElem.length) return;
@@ -179,6 +164,35 @@
         } else {
           fixedElem.css('bottom', '94px');
         }
+      }
+    }
+  };
+
+  const offsetFunc = () => {
+    const _elem = $('.test-btn');
+    if (!_elem.length) return;
+    changeBg();
+
+    $(window).on('scroll', function () {
+      changeBg();
+    });
+
+    function changeBg() {
+      // 섹션의 처음을 지날 때
+      const scrollTop = $(window).scrollTop();
+      const windowH = $(window).outerHeight();
+      const docuH = $(document).outerHeight();
+      const elemTop = $('.main-benefits').offset().top;
+
+      console.log('windowHeight', windowH);
+      console.log('scrollTop', scrollTop);
+      console.log('elemTop', elemTop);
+
+      if (scrollTop >= elemTop - _elem.outerHeight()) {
+        console.log('시작');
+        _elem.css('background', 'dodgerblue');
+      } else {
+        _elem.css('background', 'red');
       }
     }
   };

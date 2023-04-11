@@ -1,6 +1,10 @@
 // 메인 scss
 //main-visual
-
+body {
+  &.s-active {
+    overflow: hidden;
+  }
+}
 .main-visual {
   padding: 0 rem(48px);
   position: relative;
@@ -71,7 +75,7 @@
       }
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         width: rem(170.67px);
         height: rem(170.67px);
@@ -111,13 +115,13 @@
     }
 
     .swiper-pagination-wrap {
-      width: 140px;
       display: flex;
       position: absolute;
       z-index: 10;
       bottom: rem(38px);
       right: rem(80px);
       align-items: center;
+      width: 140px;
 
       @include mobile {
         position: static;
@@ -243,14 +247,11 @@
   left: 50%;
   width: rem(586px);
   transform: translateX(-50%);
-  margin: rem(45px) auto 0 auto;
-  z-index: 100;
+  z-index: 200;
   height: rem(73px);
-  transition: bottom 0.3s;
+  // transition: bottom 0.3s;
 
   @include mobile {
-    // display: none;
-    // width: 100%;
     width: calc(100% - 32px);
   }
   &.s-scrolled {
@@ -392,7 +393,7 @@
         }
 
         &::after {
-          content: "";
+          content: '';
           position: absolute;
           top: 50%;
           left: 50%;
@@ -521,7 +522,7 @@
         height: 280px;
       }
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         background: rgba(0, 0, 0, 0.2);
         width: 100%;
@@ -665,7 +666,7 @@
           }
 
           &::after {
-            content: "";
+            content: '';
             position: absolute;
             top: 0;
             right: 0;
@@ -1096,7 +1097,7 @@
         }
 
         &::after {
-          content: "";
+          content: '';
           position: absolute;
           width: 100%;
           height: 100%;
@@ -1282,4 +1283,27 @@
   justify-content: center;
   align-items: center;
   z-index: 100;
+  @include mobile {
+    width: 45px;
+    height: 45px;
+    bottom: 94px;
+    right: 12px;
+  }
+
+  & > img {
+    @include mobile {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.test-btn {
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  background: red;
+  top: 0;
+  right: 0;
+  z-index: 99999;
 }

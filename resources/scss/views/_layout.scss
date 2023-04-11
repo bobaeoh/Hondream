@@ -26,7 +26,7 @@ body {
   width: 100%;
   height: rem(88px);
   background: #ffffff;
-  z-index: 100;
+  z-index: 200;
 
   &.s-active {
     .header-mobile-menu {
@@ -159,7 +159,7 @@ body {
     &:after {
       transition: 0.25s;
       display: block;
-      content: "";
+      content: '';
       width: 100%;
       height: 2px;
       position: absolute;
@@ -284,7 +284,7 @@ body {
   visibility: hidden;
   &:before,
   &:after {
-    content: "";
+    content: '';
     background: #f6f6f6;
     top: 0;
     z-index: 1;
@@ -374,7 +374,7 @@ body {
       &:after {
         transition: 0.25s;
         display: block;
-        content: "";
+        content: '';
         width: 100%;
         height: 2px;
         position: absolute;
@@ -504,7 +504,7 @@ body {
             }
 
             &::after {
-              content: "";
+              content: '';
               position: absolute;
               top: 50%;
               transform: translateY(-50%);

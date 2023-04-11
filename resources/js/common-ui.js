@@ -131,18 +131,16 @@
 
   const FixedTest = () => {
     const fixedElem = $(".fixed-menu-wrap");
-    const scrollTop = $(window).scrollTop();
     const footerH = $(".footer").outerHeight();
     const windowH = $(window).outerHeight();
     const docuH = $(document).outerHeight();
     const _result = docuH - windowH - footerH;
     $(window).scroll(function () {
-      console.log(scrollTop, _result);
-      console.log(scrollTop - _result);
-      console.log("windowH", windowH);
-      console.log("docuH", docuH);
-      if (scrollTop >= docuH - windowH - footerH) {
-        fixedElem.css({ bottom: Math.abs(_result - scrollTop) });
+      const scrollTop = $(window).scrollTop();
+      console.log("scrollTop", scrollTop);
+      console.log("docuH - windowH - footerH", docuH - windowH - footerH);
+      if (scrollTop > docuH - windowH - footerH) {
+        fixedElem.css({ bottom: Math.abs(_result - scrollTop - 10) });
       } else {
         fixedElem.css("bottom", "10px");
       }
@@ -154,10 +152,7 @@
   // 타겟 외 클릭시 닫기 함수
   function bodyToggleFn(target, element, callback) {
     $("body").on("click", function (e) {
-      if (
-        $(e.target).closest(target).length < 1 &&
-        $(e.target).closest(element).length < 1
-      ) {
+      if ($(e.target).closest(target).length < 1 && $(e.target).closest(element).length < 1) {
         callback();
       }
     });
@@ -215,9 +210,7 @@
     // 특정 팝업 닫기
     closePopup: function (popupId) {
       var _ = this;
-      var $popupEl = popupId
-        ? $("#" + popupId)
-        : _.popupArr[_.popupArr.length - 1];
+      var $popupEl = popupId ? $("#" + popupId) : _.popupArr[_.popupArr.length - 1];
       $popupEl.removeClass("open");
       _.popupArr = _.popupArr.filter(function (item) {
         return item.attr("id") !== $popupEl.attr("id");
@@ -380,11 +373,7 @@
     speed = speed ? speed : 200;
     // 컨테이너에 solo 클래스가 있으면 각각 토글됨
     if (el.closest(".accordion-container").hasClass("solo")) {
-      el.closest(".accordion-list")
-        .toggleClass("active")
-        .find(".accordion-body")
-        .stop()
-        .slideToggle(speed);
+      el.closest(".accordion-list").toggleClass("active").find(".accordion-body").stop().slideToggle(speed);
     } else {
       el.closest(".accordion-list")
         .toggleClass("active")
@@ -481,20 +470,7 @@
             "11월(NOV)",
             "12월(DEC)",
           ],
-          monthNamesShort: [
-            "1월",
-            "2월",
-            "3월",
-            "4월",
-            "5월",
-            "6월",
-            "7월",
-            "8월",
-            "9월",
-            "10월",
-            "11월",
-            "12월",
-          ],
+          monthNamesShort: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
           changeYear: true,
           yearRange: "-60:+0",
           dateFormat: "yy-mm",
@@ -572,11 +548,7 @@
       el.val(el.val().substr(0, _maxLength));
       el.closest(".length-check-cover")
         .find(".count")
-        .text(
-          Number(_textLength).toLocaleString() +
-            "/" +
-            Number(_maxLength).toLocaleString()
-        );
+        .text(Number(_textLength).toLocaleString() + "/" + Number(_maxLength).toLocaleString());
     }
   }
 
@@ -602,11 +574,7 @@
         labels.each(function () {
           $(this).removeClass("checked");
         });
-        $(this)
-          .next("label")
-          .addClass("checked")
-          .prevAll("label")
-          .addClass("checked");
+        $(this).next("label").addClass("checked").prevAll("label").addClass("checked");
       }
     });
   }
@@ -623,9 +591,7 @@
       stagger: {
         each: 1,
         onUpdate: function () {
-          this.targets()[0].innerHTML = numberWithCommas(
-            Math.ceil(this.targets()[0].textContent)
-          );
+          this.targets()[0].innerHTML = numberWithCommas(Math.ceil(this.targets()[0].textContent));
         },
       },
     });

@@ -1,0 +1,175 @@
+// 서브 Page
+// 공통 스타일
+.sub-heading-title {
+  font-family: $body-base-font;
+  font-size: 2.188vw;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+.sub-header-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 16.667vw;
+  background: url('../../../resources/images/main/img-main-slider-01.jpg') no-repeat center center;
+  background-size: cover;
+  margin-top: 4.583vw;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .sub-title {
+    position: relative;
+    font-family: $hyundai-font;
+    font-size: 2.917vw;
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 0.492vw;
+    z-index: 10;
+  }
+
+  .sub-desc {
+    position: relative;
+    font-family: $hyundai-font;
+    font-size: 0.938vw;
+    color: $white;
+    font-weight: 400;
+    z-index: 10;
+  }
+}
+
+.sub-dream-info {
+  padding-top: 6.25vw;
+
+  .dream-option-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+  .option-items {
+    display: flex;
+  }
+
+  .option-item {
+    position: relative;
+    width: 50%;
+    height: 14.583vw;
+    margin-right: 1.25vw;
+    border-radius: 1.042vw;
+    border: 1px solid #ebedef;
+    background: #f5f7fb;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &-inner {
+      padding: 1.458vw 4.167vw 2.24vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .head-text {
+      font-family: $hyundai-font;
+      font-size: 1.458vw;
+      line-height: 1;
+      font-weight: 500;
+      color: #db712c;
+
+      &.s-blue {
+        color: #0d2672;
+      }
+    }
+
+    .option {
+      font-family: $hyundai-font;
+      font-size: 4.167vw;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .option-desc {
+      font-family: $body-base-font;
+      font-size: 0.833vw;
+      font-weight: 500;
+      line-height: 1.75;
+      color: $dark;
+      text-align: center;
+
+      strong {
+        position: relative;
+        z-index: 1;
+        font-size: 1.146vw;
+        line-height: 1.2;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 0.573vw;
+          z-index: -1;
+          background-color: #fdff9f;
+        }
+      }
+    }
+
+    .option-sub-desc {
+      font-family: $body-base-font;
+      font-size: 0.833vw;
+      font-weight: 500;
+      line-height: 1.8;
+      text-align: center;
+      color: #db712c;
+
+      &.s-blue {
+        color: #4da3d3;
+      }
+    }
+
+    .btn-apply {
+      position: absolute;
+      bottom: -7%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 4.375vw;
+      height: 1.875vw;
+      border-radius: 0.208vw;
+      background: #929292;
+      color: $white;
+      font-size: 0.729vw;
+      font-weight: 600;
+      line-height: 1.2;
+
+      &.s-blue {
+        background: #0d2672;
+      }
+    }
+  }
+
+  //   dream-date-wrap
+  .dream-date-wrap {
+    padding-top: 7.187vw;
+
+    .sub-heading-title {
+      .s-blue {
+        color: #012577;
+      }
+    }
+  }
+}

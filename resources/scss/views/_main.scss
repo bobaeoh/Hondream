@@ -791,257 +791,257 @@ body {
       }
     }
   }
+}
 
-  .dream-benefits {
-    margin-top: rem(160px);
-    position: relative;
-    z-index: 20;
+.dream-benefits {
+  margin-top: rem(160px);
+  position: relative;
+  z-index: 20;
+  @include mobile {
+    margin-top: 80px;
+  }
+
+  .benefit-title {
+    font-weight: 700;
+    font-size: rem(40px);
+    line-height: rem(48px);
+    text-align: center;
+    color: $dark;
+    margin-bottom: rem(80px);
     @include mobile {
-      margin-top: 80px;
+      font-size: 24px;
+      line-height: 1.2;
+      margin-bottom: 16px;
     }
+  }
 
-    .benefit-title {
-      font-weight: 700;
-      font-size: rem(40px);
-      line-height: rem(48px);
+  .benefit-items {
+    display: flex;
+    border-top: 3px solid #012577;
+    @include mobile {
+      flex-direction: column;
+    }
+    .benefit-item {
+      position: relative;
+      width: calc(100% / 5);
+      height: rem(480px);
       text-align: center;
-      color: $dark;
-      margin-bottom: rem(80px);
+      box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.15);
       @include mobile {
-        font-size: 24px;
-        line-height: 1.2;
-        margin-bottom: 16px;
+        width: 100%;
+        height: 222px;
+        text-align: left;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
       }
-    }
 
-    .benefit-items {
-      display: flex;
-      border-top: 3px solid #012577;
-      @include mobile {
-        flex-direction: column;
-      }
-      .benefit-item {
-        position: relative;
-        width: calc(100% / 5);
-        height: rem(480px);
-        text-align: center;
-        box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.15);
+      .benefit-item-inner {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: rem(40px) 0;
         @include mobile {
-          width: 100%;
-          height: 222px;
-          text-align: left;
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+          padding: 32px 17px 32px 24px;
+          // display: flex;
+          z-index: -10;
         }
+      }
 
-        .benefit-item-inner {
+      &:hover {
+        @media (hover: hover) {
+          .benefit-item-inner {
+            height: rem(540px);
+            background: #012577 !important;
+            border-radius: 0px 0px rem(20px) rem(20px);
+            transform: translateY(-3%);
+            transition: all 0.5s;
+          }
+
+          .item-num {
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+          }
+
+          .item-title,
+          .item-desc {
+            color: #fff;
+          }
+
+          .item-hidden-num {
+            opacity: 1;
+            transition-delay: 0.15s;
+          }
+        }
+      }
+
+      .item-num {
+        display: block;
+        font-weight: 300;
+        font-size: rem(20px);
+        line-height: rem(24px);
+        color: $dark;
+        margin-bottom: rem(24px);
+        @include mobile {
+          font-size: 15px;
+          line-height: 1.2;
+          margin-bottom: 8px;
+          font-weight: 400;
+        }
+      }
+
+      .item-title {
+        font-size: rem(22px);
+        line-height: rem(26px);
+        font-weight: 700;
+        color: #212121;
+        margin-bottom: rem(23px);
+        @include mobile {
+          font-size: 18px;
+          line-height: 1.2;
+          margin-bottom: 8px;
+        }
+      }
+
+      .item-img-wrap {
+        margin: 0 auto;
+        @include mobile {
           position: absolute;
+          top: 29px;
+          right: 17px;
+        }
+        img {
           width: 100%;
-          height: 100%;
-          padding: rem(40px) 0;
-          @include mobile {
-            padding: 32px 17px 32px 24px;
-            // display: flex;
-            z-index: -10;
-          }
+        }
+      }
+
+      .item-desc {
+        color: #212121;
+        font-size: rem(16px);
+        font-weight: 400;
+        line-height: rem(19px);
+        margin: 0 auto;
+        @include mobile {
+          font-size: 14px;
+          line-height: 1.57;
+        }
+      }
+
+      .item-hidden-num {
+        opacity: 0;
+        margin: rem(40px) auto 0 auto;
+        width: rem(60px);
+        height: rem(60px);
+        border-radius: rem(100px);
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s;
+        @include mobile {
+          display: none;
         }
 
-        &:hover {
-          @media (hover: hover) {
-            .benefit-item-inner {
-              height: rem(540px);
-              background: #012577 !important;
-              border-radius: 0px 0px rem(20px) rem(20px);
-              transform: translateY(-3%);
-              transition: all 0.5s;
-            }
-
-            .item-num {
-              opacity: 0;
-              height: 0;
-              overflow: hidden;
-            }
-
-            .item-title,
-            .item-desc {
-              color: #fff;
-            }
-
-            .item-hidden-num {
-              opacity: 1;
-              transition-delay: 0.15s;
-            }
-          }
-        }
-
-        .item-num {
-          display: block;
-          font-weight: 300;
+        span {
+          color: #012577;
           font-size: rem(20px);
           line-height: rem(24px);
-          color: $dark;
-          margin-bottom: rem(24px);
-          @include mobile {
-            font-size: 15px;
-            line-height: 1.2;
-            margin-bottom: 8px;
-            font-weight: 400;
-          }
+          font-weight: 500;
         }
+      }
 
-        .item-title {
-          font-size: rem(22px);
-          line-height: rem(26px);
-          font-weight: 700;
-          color: #212121;
-          margin-bottom: rem(23px);
-          @include mobile {
-            font-size: 18px;
-            line-height: 1.2;
-            margin-bottom: 8px;
-          }
+      &:nth-child(odd) {
+        .benefit-item-inner {
+          background: #fff;
         }
+      }
 
+      &:nth-child(even) {
+        .benefit-item-inner {
+          background: #f5f7fb;
+        }
+      }
+
+      &:nth-child(1) {
         .item-img-wrap {
-          margin: 0 auto;
+          width: rem(146px);
+          margin-bottom: rem(26px);
           @include mobile {
-            position: absolute;
-            top: 29px;
-            right: 17px;
+            width: 103px;
+            margin-bottom: 0;
           }
-          img {
+        }
+        .item-desc {
+          width: rem(216px);
+          @include mobile {
             width: 100%;
           }
         }
+      }
 
+      &:nth-child(2) {
+        .item-img-wrap {
+          width: rem(103px);
+          margin-bottom: rem(17px);
+          @include mobile {
+            width: 85px;
+            margin-bottom: 0;
+          }
+        }
         .item-desc {
-          color: #212121;
-          font-size: rem(16px);
-          font-weight: 400;
-          line-height: rem(19px);
-          margin: 0 auto;
+          width: rem(242px);
           @include mobile {
-            font-size: 14px;
-            line-height: 1.57;
+            width: 100%;
           }
         }
+      }
 
-        .item-hidden-num {
-          opacity: 0;
-          margin: rem(40px) auto 0 auto;
-          width: rem(60px);
-          height: rem(60px);
-          border-radius: rem(100px);
-          background: #fff;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          transition: all 0.3s;
+      &:nth-child(3) {
+        .item-img-wrap {
+          width: rem(118.27px);
+          margin-bottom: rem(46px);
           @include mobile {
-            display: none;
-          }
-
-          span {
-            color: #012577;
-            font-size: rem(20px);
-            line-height: rem(24px);
-            font-weight: 500;
+            width: 91px;
+            margin-bottom: 0;
           }
         }
-
-        &:nth-child(odd) {
-          .benefit-item-inner {
-            background: #fff;
+        .item-desc {
+          width: rem(210px);
+          @include mobile {
+            width: 100%;
           }
         }
+      }
 
-        &:nth-child(even) {
-          .benefit-item-inner {
-            background: #f5f7fb;
+      &:nth-child(4) {
+        .item-img-wrap {
+          width: rem(130px);
+          margin-bottom: rem(43.44px);
+          @include mobile {
+            width: 93px;
+            margin-bottom: 0;
           }
         }
-
-        &:nth-child(1) {
-          .item-img-wrap {
-            width: rem(146px);
-            margin-bottom: rem(26px);
-            @include mobile {
-              width: 103px;
-              margin-bottom: 0;
-            }
-          }
-          .item-desc {
-            width: rem(216px);
-            @include mobile {
-              width: 100%;
-            }
+        .item-desc {
+          width: rem(238px);
+          @include mobile {
+            width: 100%;
           }
         }
+      }
 
-        &:nth-child(2) {
-          .item-img-wrap {
-            width: rem(103px);
-            margin-bottom: rem(17px);
-            @include mobile {
-              width: 85px;
-              margin-bottom: 0;
-            }
-          }
-          .item-desc {
-            width: rem(242px);
-            @include mobile {
-              width: 100%;
-            }
+      &:nth-child(5) {
+        .item-img-wrap {
+          width: rem(130px);
+          margin-bottom: rem(50px);
+          @include mobile {
+            width: 100px;
+            margin-bottom: 0;
           }
         }
-
-        &:nth-child(3) {
-          .item-img-wrap {
-            width: rem(118.27px);
-            margin-bottom: rem(46px);
-            @include mobile {
-              width: 91px;
-              margin-bottom: 0;
-            }
-          }
-          .item-desc {
-            width: rem(210px);
-            @include mobile {
-              width: 100%;
-            }
-          }
-        }
-
-        &:nth-child(4) {
-          .item-img-wrap {
-            width: rem(130px);
-            margin-bottom: rem(43.44px);
-            @include mobile {
-              width: 93px;
-              margin-bottom: 0;
-            }
-          }
-          .item-desc {
-            width: rem(238px);
-            @include mobile {
-              width: 100%;
-            }
-          }
-        }
-
-        &:nth-child(5) {
-          .item-img-wrap {
-            width: rem(130px);
-            margin-bottom: rem(50px);
-            @include mobile {
-              width: 100px;
-              margin-bottom: 0;
-            }
-          }
-          .item-desc {
-            width: rem(206px);
-            @include mobile {
-              width: 100%;
-            }
+        .item-desc {
+          width: rem(206px);
+          @include mobile {
+            width: 100%;
           }
         }
       }

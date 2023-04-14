@@ -9,8 +9,16 @@ body {
 }
 
 // 레이아웃 inner
+// .section-inner {
+//   width: rem($layoutSize);
+//   margin: 0 auto;
+//   @media (max-width: ($layoutSize + 40px)) {
+//     width: auto;
+//     padding: 0 rem(16px);
+//   }
+// }
 .section-inner {
-  width: rem($layoutSize);
+  width: 75vw;
   margin: 0 auto;
   @media (max-width: ($layoutSize + 40px)) {
     width: auto;
@@ -25,7 +33,7 @@ body {
   left: 0;
   width: 100%;
   height: rem(88px);
-  background: #ffffff;
+  // background: #ffffff;
   z-index: 200;
 
   &.s-active {

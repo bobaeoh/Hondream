@@ -38,6 +38,8 @@
     FixedTest();
     fellowFunc();
     offsetFunc();
+    // 탭메뉴 기능
+    tabHandler();
     // 슬라이드
     sliderMaker();
   });
@@ -189,12 +191,26 @@
       console.log('elemTop', elemTop);
 
       if (scrollTop >= elemTop - _elem.outerHeight()) {
-        console.log('시작');
         _elem.css('background', 'dodgerblue');
       } else {
         _elem.css('background', 'red');
       }
     }
+  };
+
+  const tabHandler = () => {
+    const menuItem = $('.function-item');
+    menuItem.on('click', function () {
+      const tabAttr = $(this).attr('data-tab');
+      $(this).addClass('s-active').siblings().removeClass('s-active');
+
+      $('#' + tabAttr)
+        .addClass('s-active')
+        .siblings()
+        .removeClass('s-active');
+
+      $();
+    });
   };
 
   // ------------------------ 공통 함수(공통함수의 수정이 필요한 경우 공유 후 작업) ---------------------------//

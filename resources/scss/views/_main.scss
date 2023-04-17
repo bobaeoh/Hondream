@@ -36,6 +36,10 @@ body {
       margin: 124px 0 16px 0;
     }
 
+    .text-wrapper {
+      overflow: hidden;
+    }
+
     .heading-desc {
       font-family: $hyundai-font;
       font-weight: 400;
@@ -43,6 +47,7 @@ body {
       line-height: rem(42px);
       color: $dark;
       margin-bottom: rem(19px);
+      transform: translateY(140%);
 
       @include mobile {
         font-size: 16px;
@@ -56,6 +61,7 @@ body {
       font-weight: 700;
       font-size: rem(120px);
       line-height: rem(127px);
+      transform: translateY(100%);
 
       @include mobile {
         font-size: 40px;
@@ -320,14 +326,14 @@ body {
 //main-dream
 .main-dream {
   position: relative;
-  margin-top: rem(43x);
+  padding-top: 8.333vw;
 
   &-inner {
     padding: 0 16px;
   }
 
   @include mobile {
-    margin-top: 120px;
+    padding-top: 120px;
   }
 
   .dream-img-wrap {

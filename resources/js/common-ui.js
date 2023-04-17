@@ -34,15 +34,24 @@
     langFunc();
     //모바일메뉴 기능
     mobileMenuFunc();
+    // text 나타내는 기능
+    textReveal();
+    // apply-banner Ani
+    showApply();
+    // 비디오 width 확장
+    videoWidthFunc();
+    // 메인페이지 마퀴 기능
     marqueeFunc();
     //fixed Btn Func
     FixedTest();
+    // 최상단 버튼 기능
     fellowFunc();
     offsetFunc();
     // 탭메뉴 기능
+    tabScrollMenu();
+    // 서브페이지 탭메뉴
     tabHandler();
     scrollMove();
-    videoWidthFunc();
     // 슬라이드
     sliderMaker();
   });
@@ -98,6 +107,29 @@
     });
   }
   // ------------------------ ui 함수 -----------------------------//
+  const tabScrollMenu = () => {
+    const $floatMenu = $('.fixed-menu-wrap.p-main');
+    if (!$floatMenu.length) return;
+    menuOnScroll();
+
+    $(window).on('scroll', function () {
+      menuOnScroll();
+    });
+
+    function menuOnScroll() {
+      $('.tab-scroll-content').each(function (i) {
+        var _offset = $(this).offset().top;
+        var _sct = $(window).scrollTop();
+
+        if (_sct >= _offset - $('.header').outerHeight()) {
+          $floatMenu.find('.menu-item').removeClass('s-active').eq(i).addClass('s-active');
+        } else if (_sct <= $('.tab-scroll-content').eq(0).offset().top - $('.header').outerHeight()) {
+          $floatMenu.find('.menu-item').removeClass('s-active');
+        }
+      });
+    }
+  };
+
   //언어선택 드롭박스
   const langFunc = () => {
     const langBtn = $('.header-lang');
@@ -246,6 +278,14 @@
     });
   };
 
+  const textReveal = () => {
+    gsap.to('.text-reveal', {
+      duration: 0.8,
+      y: '0%',
+      stagger: 0.2,
+    });
+  };
+
   const videoWidthFunc = () => {
     const _target = $('.dream-video-wrap');
     ScrollTrigger.matchMedia({
@@ -274,6 +314,21 @@
           height: '100vh',
         });
       },
+    });
+  };
+
+  const showApply = () => {
+    let tl = gsap.timeline();
+    tl.to('.apply-banner', {
+      duration: 0.9,
+      scale: 1.3,
+      delay: 1,
+      ease: 'ease',
+    });
+    tl.to('.apply-banner', {
+      duration: 0.9,
+      scale: 1,
+      ease: 'ease',
     });
   };
 

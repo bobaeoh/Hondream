@@ -35,6 +35,11 @@ body {
   height: rem(88px);
   // background: #ffffff;
   z-index: 200;
+  transition: background 0.3s linear;
+
+  &.scroll {
+    background: $white;
+  }
 
   &.s-active {
     .header-mobile-menu {

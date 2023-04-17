@@ -566,7 +566,7 @@
   margin-top: 6.25vw;
   @include mobile {
     margin-top: 0;
-    padding: 160px 0 120px 0;
+    padding: 120px 0;
   }
 
   .tab-menu-items {
@@ -584,7 +584,6 @@
     border: 1px solid #dfdfdf;
     border-radius: 5.208vw;
     font-size: 2.917vw;
-    color: #4ca4d3;
     line-height: 1;
     font-weight: 600;
     cursor: pointer;
@@ -597,16 +596,26 @@
       font-size: 46px;
     }
 
-    span {
-      font-family: $hyundai-font;
-      font-size: 1.458vw;
-      font-weight: 400;
-      line-height: 1;
-      color: #1f4c83;
-      margin-right: 0.833vw;
+    & > a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: #4ca4d3;
       @include mobile {
-        font-size: 16px;
-        margin-right: 0;
+        flex-direction: column;
+      }
+      span {
+        font-family: $hyundai-font;
+        font-size: 1.458vw;
+        font-weight: 400;
+        line-height: 1;
+        color: #1f4c83;
+        margin-right: 0.833vw;
+        @include mobile {
+          font-size: 16px;
+          margin-right: 0;
+        }
       }
     }
 
@@ -617,11 +626,13 @@
     }
 
     &:last-child {
-      color: #efbe40;
       margin-right: 0;
+      & > a {
+        color: #efbe40;
 
-      span {
-        color: #db712c;
+        span {
+          color: #db712c;
+        }
       }
     }
   }
@@ -1263,5 +1274,8 @@
 .fixed-menu-wrap {
   &.p-sub {
     width: 376px;
+    @include mobile {
+      width: 95%;
+    }
   }
 }

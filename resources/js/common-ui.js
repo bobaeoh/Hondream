@@ -34,12 +34,15 @@
     langFunc();
     //모바일메뉴 기능
     mobileMenuFunc();
+    marqueeFunc();
     //fixed Btn Func
     FixedTest();
     fellowFunc();
     offsetFunc();
     // 탭메뉴 기능
     tabHandler();
+    scrollMove();
+    videoWidthFunc();
     // 슬라이드
     sliderMaker();
   });
@@ -200,7 +203,9 @@
 
   const tabHandler = () => {
     const menuItem = $('.function-item');
-    menuItem.on('click', function () {
+    menuItem.on('click', function (e) {
+      e.preventDefault();
+      // 클릭 이벤트
       const tabAttr = $(this).attr('data-tab');
 
       $('#' + tabAttr)
@@ -212,6 +217,63 @@
         .addClass('s-active')
         .siblings()
         .removeClass('s-active');
+    });
+  };
+
+  const scrollMove = () => {
+    const menuElem = $('.menu-item a');
+    menuElem.on('click', function () {
+      const _offset = $('.sub-dream-tab').offset().top;
+      const $doc = $('html, body');
+
+      $doc.animate(
+        {
+          scrollTop: _offset,
+        },
+        300
+      );
+    });
+  };
+
+  const marqueeFunc = () => {
+    $('.marquee_text').marquee({
+      direction: 'left',
+      duration: 25000,
+      gap: 50,
+      // delayBeforeStart: 200,
+      duplicated: true,
+      // startVisible: true,
+    });
+  };
+
+  const videoWidthFunc = () => {
+    const _target = $('.dream-video-wrap');
+    ScrollTrigger.matchMedia({
+      '(min-width: 1281px)': function () {
+        gsap.to('.dream-video-wrap .img-wrap', {
+          scrollTrigger: {
+            trigger: '.dream-video-wrap',
+            scrub: true,
+            pin: true,
+            // markers: true,
+            start: '30% center',
+            end: () => `+=${_target.outerHeight()}`,
+          },
+          width: '100%',
+        });
+      },
+      '(max-width: 1280px)': function () {
+        gsap.to('.dream-video-wrap .img-wrap', {
+          scrollTrigger: {
+            trigger: '.dream-video-wrap',
+            scrub: true,
+            pin: true,
+            // markers: true,
+          },
+          width: '100%',
+          height: '100vh',
+        });
+      },
     });
   };
 

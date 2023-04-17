@@ -202,14 +202,16 @@
     const menuItem = $('.function-item');
     menuItem.on('click', function () {
       const tabAttr = $(this).attr('data-tab');
-      $(this).addClass('s-active').siblings().removeClass('s-active');
 
       $('#' + tabAttr)
         .addClass('s-active')
         .siblings()
         .removeClass('s-active');
 
-      $();
+      $(".function-item[data-tab='" + tabAttr + "']")
+        .addClass('s-active')
+        .siblings()
+        .removeClass('s-active');
     });
   };
 

@@ -47,8 +47,10 @@
     // 최상단 버튼 기능
     fellowFunc();
     offsetFunc();
-    // 탭메뉴 기능
+    // 탭메뉴 스크롤 기능
     tabScrollMenu();
+    // 탭메뉴 클릭 기능
+    scrollToAnyPoint('.fixed-menu-wrap.p-main .menu-item');
     // 서브페이지 탭메뉴
     tabHandler();
     scrollMove();
@@ -118,17 +120,27 @@
 
     function menuOnScroll() {
       $('.tab-scroll-content').each(function (i) {
-        var _offset = $(this).offset().top;
-        var _sct = $(window).scrollTop();
+        var $offset = $(this).offset().top;
+        var $scrollTop = $(window).scrollTop();
 
-        if (_sct >= _offset - $('.header').outerHeight()) {
+        if ($scrollTop >= $offset - $('.header').outerHeight()) {
           $floatMenu.find('.menu-item').removeClass('s-active').eq(i).addClass('s-active');
-        } else if (_sct <= $('.tab-scroll-content').eq(0).offset().top - $('.header').outerHeight()) {
+        } else if ($scrollTop <= $('.tab-scroll-content').eq(0).offset().top - $('.header').outerHeight()) {
           $floatMenu.find('.menu-item').removeClass('s-active');
         }
       });
     }
   };
+
+  function scrollToAnyPoint(navItem) {
+    let getAttr;
+    $(navItem).on('click', function (e) {
+      e.preventDefault();
+      getAttr = $(this).attr('href');
+      const toSection = $(getAttr).offset().top;
+      $('html, body').animate({scrollTop: toSection}, 800);
+    });
+  }
 
   //언어선택 드롭박스
   const langFunc = () => {

@@ -1,11 +1,11 @@
 // 메인 scss
-//main-visual
 body {
   overflow-x: hidden;
   &.s-active {
     overflow: hidden;
   }
 }
+//main-visual
 .main-visual {
   padding: 0 rem(48px);
   position: relative;
